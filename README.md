@@ -16,9 +16,9 @@ We love to collaborate with an esteemed organization like yours. We will help yo
 ## Problem Statement:
 - #### Predicting if a crash involves an injury or not, and what factors lead to more crashes.
 
-The dataset (car_crash_report.csv) is collected from the [www.data.gov](https://catalog.data.gov/dataset/1-08-crash-data-report-detail) website. It consists of around 40 thousand observations of crashes in Tempe city (Arizona). The data includes vehicle-vehicle, vehicle-bicycle, and vehicle-pedestrian crashes along with the location, type of crash, and many other features. 
+The dataset (car_crash_report.csv) is collected from the [www.data.gov](https://catalog.data.gov/dataset/1-08-crash-data-report-detail) website. It consists of around 40 thousand observations of crashes in Tempe city (Arizona). The data includes vehicle-vehicle, vehicle-bicycle, and vehicle-pedestrian crashes along with the location, type of crash, and many other features.
 
-From this dataset, we can predict if a crash involves injury or not, and figure out what factors lead to more crashes. This way, we can help the [Arizona Department of Transportation (ADOT)](https://azdot.gov/about-adot) minimize crashes and contribute to the [Vision Zero](https://en.wikipedia.org/wiki/Vision_Zero) initiative. 
+From this dataset, we can predict if a crash involves injury or not, and figure out what factors lead to more crashes. This way, we can help the [Arizona Department of Transportation (ADOT)](https://azdot.gov/about-adot) minimize crashes and contribute to the [Vision Zero](https://en.wikipedia.org/wiki/Vision_Zero) initiative.
 
 Our model will significantly help the insurance companies predict the number of injuries in a crash and investigate the incorrect predictions to check for false injury claims.
 
@@ -40,7 +40,7 @@ Our model will significantly help the insurance companies predict the number of 
 
 ## Data Dictionary
 
-Initially there were 35 features, so after using correlation heatmap (for numerical features) and boxplots (for categorical features) I came up with the following features that were the best to predict if the crash involves an injury or not. 
+Initially there were 35 features, so after using correlation heatmap (for numerical features) and boxplots (for categorical features) I came up with the following features that were the best to predict if the crash involves an injury or not.
 
 
 |Feature|Type|Description|
@@ -50,10 +50,10 @@ Initially there were 35 features, so after using correlation heatmap (for numeri
 |**AlcoholUse_Drv2**|*int*|0 for no alcohol influence on the driver_2 and 1 for yes
 |**Age_Drv1**|*int*|Age of driver_1
 |**DrugUse_Drv1**|*int*|0 for no drug influence on the driver_1 and 1 for yes
-|**Not_Clear_Weather**|*int*|0 for clear weather and 1 for not clear weather 
+|**Not_Clear_Weather**|*int*|0 for clear weather and 1 for not clear weather
 |**Not_Dry_Surface**|*float*|0 for dry surface and 1 for not dry surface
 |**Collision_Manner**|*Object*| Manner in which the vehicles collided. **Note: Dummy variable, later converted into 5 different int features containg values from 0 to 1 (Head_On,Left_Turn,Rear_End,Same_Direction,Other)**
-         
+
 For remaining variables, please refer to the **data/Data_Dictionary.csv** directory.
 
 ## Data Cleaning
@@ -74,7 +74,7 @@ For remaining variables, please refer to the **data/Data_Dictionary.csv** direct
 
 ## Modeling
 
-I trained a total of 11 models, and summarized the results below. Since my stakeholders include motor-vehicle insurance companies and I want to minimize insurance fraud cases for them, **so I chose model with the highest specificity score (ADA Boosting Model,64.63%).** Specificity is the ratio of true negatives to total negatives(tn/(tn+fp)). In our case true negatives are where our model correctly predicted that there was no injury and total negatives are sum of true negatives and false positives ( in our case, false positives are where our model predicted there was an injury but the opposite was true in reality). 
+I trained a total of 11 models, and summarized the results below. Since my stakeholders include motor-vehicle insurance companies and I want to minimize insurance fraud cases for them, **so I chose model with the highest specificity score (ADA Boosting Model,64.63%).** Specificity is the ratio of true negatives to total negatives(tn/(tn+fp)). In our case true negatives are where our model correctly predicted that there was no injury and total negatives are sum of true negatives and false positives ( in our case, false positives are where our model predicted there was an injury but the opposite was true in reality).
 
 ||**Model**|**Specificity Score**|
 |---|---|---|
@@ -89,6 +89,7 @@ I trained a total of 11 models, and summarized the results below. Since my stake
 |9|Naive Bayes (Bernoulli)|64.43%|
 |10|**ADA Boosting**|**64.63%**|
 |11|Neural Netork (NN)|64.43%|
+
 **Note:** We can see from the above table that we have hit the upper limit of specificity score as all the models have score around 64.5%.
 ## Conclusions and Recommendations
 - Injury_Severity (0.74), Age, Alcohol & Drug Use were the top correlated features to 'Toatl_injuries.'
