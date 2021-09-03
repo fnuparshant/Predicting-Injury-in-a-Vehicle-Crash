@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import pydeck as pdk
-import sklearn
+import scikit-learn
 from PIL import Image
 
 
