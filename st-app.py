@@ -3,6 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import pydeck as pdk
+import sklearn
 from PIL import Image
 
 
