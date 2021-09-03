@@ -1,2 +1,1 @@
-pip install -U scikit-learn
 Pip install sklearn
