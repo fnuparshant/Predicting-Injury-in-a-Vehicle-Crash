@@ -37,6 +37,7 @@ Our model will significantly help the insurance companies predict the number of 
 - **README.md**
 - **st-app.py** - Contains code for the Streamlit app.
 - **Best_model_Ada_Boosting.pkl** - Saved Ada Boosting model to be used in the Streamlit app.
+- **requirements.txt** - My friend, Rebecca Patterson, send me this file so that I can publish it on Streamlit Website
 
 ## Data Dictionary
 
